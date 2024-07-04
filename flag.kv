@@ -1,0 +1,42 @@
+#:kivy 1.0.9
+
+<FlagQuizScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        
+        Label:
+            text: 'Guess the Country Flag!'
+            font_size: 30
+        
+        Image:
+            id: flag_image
+            source: 'flags/flag1.png'
+            size_hint_y: None
+            height: dp(200)
+            allow_stretch: True
+            keep_ratio: False
+        
+        TextInput:
+            id: user_guess
+            multiline: False
+            hint_text: 'Enter your guess'
+            font_size: 20
+            size_hint_y: None
+            height: dp(40)
+            padding: dp(10), dp(10)
+        
+        Label:
+            id: timer_label
+            text: 'Time: 60'
+            font_size: 24
+        
+        Label:
+            id: score_label
+            text: 'Score: 0'
+            font_size: 24
+        
+        Button:
+            text: 'Submit'
+            size_hint: (0.3, 0.3)
+            on_release: root.check_answer()
